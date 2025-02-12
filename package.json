@@ -5,8 +5,12 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "export": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "vitest",
+    "test:ts": "tsc --noEmit",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.0.0",
@@ -20,11 +24,16 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.2.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitest/coverage-v8": "^3.0.5",
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
-    "typescript": "^5"
+    "postcss-nested": "^7.0.2",
+    "typescript": "^5",
+    "vitest": "^3.0.5"
   }
 }
