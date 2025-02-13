@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import Navbar from "@/components/Navbar";
+// import { Geist, Geist_Mono } from "next/font/google";
 import  ReactQueryProvider from "@/lib/react-query";
 import "./globals.css";
 
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Navbar />
         <ReactQueryProvider>{children}</ReactQueryProvider>
       </body>
     </html>
