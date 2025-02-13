@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import Navbar from "@/components/Navbar";
 // import { Geist, Geist_Mono } from "next/font/google";
 import  ReactQueryProvider from "@/lib/react-query";
@@ -28,9 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <ReactQueryProvider>{children}</ReactQueryProvider>
-        <Footer />
+        <AppRouterCacheProvider>
+          <Navbar />
+          <ReactQueryProvider>{children}</ReactQueryProvider>
+          <Footer />
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
