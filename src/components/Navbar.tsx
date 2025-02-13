@@ -35,13 +35,8 @@ const Navbar = (props: Props) => {
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Box sx={{display:'flex', padding:'10px'}}>
-                <Box sx={{ backgroundColor: 'var(--navbar-bg-color)', borderRadius:'50%'}}>
-                    <Image src="/Logo.svg" alt="Logo" width={40} height={40} style={{ marginRight: '0.7rem' }} />
-                </Box>
-                <Typography variant="h6" sx={{ my: 2, fontSize:'0.7rem' }}>
-                    Más rápido y más barato
-                </Typography>
+            <Box sx={{display:'flex', padding:'10px', alignContent:"center", justifyContent:"center", backgroundColor:'var(--navbar-bg-color)'}}>
+                <Image src="/Logo&Lema.svg" alt="Logo" width={140} height={70} style={{ marginRight: '1rem' }} />
             </Box>
             <Divider />
             <List>
@@ -62,15 +57,8 @@ const Navbar = (props: Props) => {
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar component="nav" position="fixed" sx={{ backgroundColor: 'var(--navbar-bg-color)' }}>
-                <Toolbar>
-                    <Image src="/Logo.svg" alt="Logo" width={70} height={70} style={{ marginRight: '1rem' }} />
-                    <Typography
-                        variant="h6"
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' }, fontSize:'1rem', color: '#EFDCA0' }}
-                    >
-                        Más rápido <br />y más barato
-                    </Typography>
+                <Toolbar sx={{ justifyContent: 'space-between' }}>
+                    <Image src="/Logo&Lema.svg" alt="Logo" width={140} height={70} style={{ marginRight: '1rem' }} />
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
                             <Button key={item} sx={{ color: '#fff', border: '1px solid #fff', textTransform: 'none', marginLeft: 1, borderRadius: '20px' }}>
