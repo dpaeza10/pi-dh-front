@@ -36,7 +36,9 @@ const Navbar = (props: Props) => {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <Box sx={{display:'flex', padding:'10px', alignContent:"center", justifyContent:"center", backgroundColor:'var(--navbar-bg-color)'}}>
-                <Image src="/Logo&Lema.svg" alt="Logo" width={140} height={70} style={{ marginRight: '1rem' }} />
+                <Link href={'/'}>
+                    <Image src="/Logo&Lema.svg" alt="Logo" width={140} height={70} style={{ marginRight: '1rem' }} />
+                </Link>
             </Box>
             <Divider />
             <List>
@@ -58,7 +60,9 @@ const Navbar = (props: Props) => {
             <CssBaseline />
             <AppBar component="nav" position="fixed" sx={{ backgroundColor: 'var(--navbar-bg-color)' }}>
                 <Toolbar sx={{ justifyContent: 'space-between' }}>
-                    <Image src="/Logo&Lema.svg" alt="Logo" width={140} height={70} style={{ marginRight: '1rem' }} />
+                    <Link href={'/'}>
+                        <Image src="/Logo&Lema.svg" alt="Logo" width={140} height={70} style={{ marginRight: '1rem' }} />
+                    </Link>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
                             <Button key={item} sx={{ color: '#fff', border: '1px solid #fff', textTransform: 'none', marginLeft: 1, borderRadius: '20px' }}>
