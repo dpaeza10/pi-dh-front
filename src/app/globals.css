@@ -1,7 +1,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --navbar-bg-color: #0A0A25;
+  --darkBlue: #0A0A25;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -35,7 +35,7 @@ const Navbar = (props: Props) => {
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Box sx={{display:'flex', padding:'10px', alignContent:"center", justifyContent:"center", backgroundColor:'var(--navbar-bg-color)'}}>
+            <Box sx={{display:'flex', padding:'10px', alignContent:"center", justifyContent:"center", backgroundColor:'var(--darkBlue)'}}>
                 <Link href={'/'}>
                     <Image src="/Logo&Lema.svg" alt="Logo" width={140} height={70} style={{ marginRight: '1rem' }} />
                 </Link>
@@ -58,7 +58,7 @@ const Navbar = (props: Props) => {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar component="nav" position="fixed" sx={{ backgroundColor: 'var(--navbar-bg-color)' }}>
+            <AppBar component="nav" position="fixed" sx={{ backgroundColor: 'var(--darkBlue)' }}>
                 <Toolbar sx={{ justifyContent: 'space-between' }}>
                     <Link href={'/'}>
                         <Image src="/Logo&Lema.svg" alt="Logo" width={140} height={70} style={{ marginRight: '1rem' }} />
