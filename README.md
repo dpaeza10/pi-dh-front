@@ -34,3 +34,79 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+# Project Structure
+
+This project follows a structured approach to ensure scalability and maintainability. Below is an overview of the folder structure:
+
+### `/src`
+- **`/app`**: Contains all routes and pages using the Next.js App Router.
+- **`/components`**: Organized using Atomic Design (`atoms`, `molecules`, `organisms`, `templates`).
+- **`/domains`**: Domain-specific logic (e.g., `auth`, `customer`). Each domain contains `constants`, `mappings`, `repositories`, `services`, `types`, and `validations`.
+- **`/lib`**: Configuration for third-party libraries (e.g., React Query).
+- **`/store`**: Global store implementation using `useSyncExternalStore`.
+- **`/test`**: Test setup using Vitest and Testing Library.
+- **`/utils`**: Utility functions and shared logic.
+
+### Guidelines
+1. **Components**: Use the Atomic Design structure for components.
+2. **Domains**: Keep domain-specific logic in the `/domains` folder.
+3. **State Management**: Use the global store in `/store` for shared state.
+4. **Testing**: Write tests in the same directory as the component or utility being tested.
+5. **Utilities**: Reuse utilities from `/utils` to avoid duplication.
+
+For more details, refer to the specific folders and their READMEs (if available).
+
+<pre>
+/src
+├── /app
+│   ├── /(auth)                     # Auth-related routes (optional grouping)
+│   ├── /(customer)                 # Customer-related routes (optional grouping)
+│   ├── /api                        # API routes
+│   ├── /layout.tsx                 # Root layout
+│   ├── /page.tsx                   # Home page
+│   ├── /loading.tsx                # Loading UI
+│   ├── /error.tsx                  # Error UI
+│   └── /not-found.tsx              # Not Found UI
+│
+├── /components
+│   ├── /atoms                      # Atomic components (e.g., buttons, inputs)
+│   ├── /molecules                  # Composed components (e.g., forms, cards)
+│   ├── /organisms                  # Complex components (e.g., headers, sidebars)
+│   └── /templates                  # Page templates (e.g., layouts for pages)
+│
+├── /domains
+│   ├── /auth                       # Auth domain
+│   │   ├── /constants              # Auth-related constants
+│   │   ├── /mappings               # Auth-related data mappings
+│   │   ├── /repositories           # Auth-related data fetching logic
+│   │   ├── /services               # Auth-related business logic
+│   │   ├── /types                  # Auth-related TypeScript types
+│   │   └── /validations            # Auth-related validation logic
+│   │
+│   └── /customer                   # Customer domain
+│       ├── /constants              # Customer-related constants
+│       ├── /mappings               # Customer-related data mappings
+│       ├── /repositories           # Customer-related data fetching logic
+│       ├── /services               # Customer-related business logic
+│       ├── /types                  # Customer-related TypeScript types
+│       └── /validations            # Customer-related validation logic
+│
+├── /lib
+│   ├── /react-query                # React Query configuration
+│   └── /other-library              # Other library configurations
+│
+├── /store
+│   └── index.ts                    # Global store using `useSyncExternalStore`
+│
+├── /test
+│   └── setup.ts                    # Test setup using Vitest and Testing Library
+│
+└── /utils
+    ├── /constants                  # Global constants
+    ├── /data                       # Mock data or static data
+    ├── /types                      # Global TypeScript types
+    ├── /ui                         # UI-related utilities (e.g., theme, styles)
+    ├── /validations                # Global validation utilities
+    └── index.ts                    # Utility functions
+</pre>
